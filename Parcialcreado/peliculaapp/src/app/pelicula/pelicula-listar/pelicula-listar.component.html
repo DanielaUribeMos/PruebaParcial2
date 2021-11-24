@@ -1,0 +1,29 @@
+<div *ngIf="selected">
+  <app-pelicula-detail [peliculaDetail]="selectedPelicula" ></app-pelicula-detail>
+</div>
+
+<div class="container-fluid">
+  <div class="row p-5">
+    <table class="table table-bordered">
+        <thead class="table" id="tabla">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Channel</th>
+            <th scope="col">Seasons</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let i of peliculas">
+            <th scope="row" (click)="onSelected(i)">{{i.id}}</th>
+            <th scope="row" id="Nombre">{{i.name}}</th>
+            <th scope="row">{{i.channel}}</th>
+            <th scope="row">{{i.seasons}}</th>
+          </tr>
+        </tbody>
+    </table>
+    <h2>Seasons average:</h2>
+    <p> {{average}}</p>
+  </div>
+</div>
+
